@@ -1,0 +1,38 @@
+﻿<Window x:Class="ProjectTimeCounter_PTC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectTimeCounter_PTC"
+        xmlns:views="clr-namespace:ProjectTimeCounter_PTC.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <Canvas>
+            <Menu>
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Save" Name="Save" Click="Save_OnClick" />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <Separator />
+                    <MenuItem Header="_About" Name="About" Click="About_OnClick" />
+                </MenuItem>
+            </Menu>
+
+            <Canvas Canvas.Left="10" Canvas.Top="25">
+                <Button x:Name="Add" Click="Add_OnClick" Height="50" Width="50">+</Button>
+                <Button x:Name="Remove" Click="Remove_OnClick" Height="50" Width="50" Canvas.Left="50">-</Button>
+                <TextBox x:Name="ProjectName" Height="50" Width="200" Canvas.Left="100" VerticalAlignment="Center">Project Name</TextBox>
+
+                <Rectangle Canvas.Top="60" Height="350" Width="320" Stroke="Black" StrokeThickness="1"></Rectangle>
+                <Canvas Canvas.Top="60" Name="ProjectsList" Height="350" Width="430">
+                    <ScrollViewer Height="350" Width="430">
+                        <ListBox x:Name="ProjectList" Canvas.Top="100" />
+                    </ScrollViewer>
+                </Canvas>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Window>
